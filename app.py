@@ -14,7 +14,7 @@ def RequestTimefromNtp(addr):
     if data:
         t = struct.unpack('!12I', data)[10]
         t -= REF_TIME_1970
-    return dt.datetime.fromtimestamp(t).strftime("%d %m %Y, %H:%M:%S")
+    return t
 
 @app.route('/')
 def index():
